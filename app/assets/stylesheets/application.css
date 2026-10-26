@@ -1,0 +1,162 @@
+body {
+    margin:0;
+    padding:0;
+    background-image: none !important; /* Impede que uma cópia da imagem fique no fundo da página */
+    background-color: #ffffff;
+}
+main{
+  
+  margin-left:0;
+  padding: 40px 50px; /* 40px no topo/base e 50px nas laterais da imagem */
+  min-height: 85vh; 
+  background-image: 
+  linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+  url('/imagem_fundo.jpg');
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  width: 100%;
+  box-sizing: border-box;
+
+
+}
+
+.logo_igreja {
+ 
+    width: 120px;
+}
+ header {
+    padding: 15px 30px; 
+    display: flex;
+    align-items: center;
+    gap:0;
+    background:linear-gradient(135deg, rgb(164, 245, 172), rgb(194, 248, 182), rgb(218, 245, 222));
+    margin:0;
+   
+ }
+
+ main h1 {
+    margin-top: 0;
+    color: rgb(68, 72, 76);
+    margin-bottom: 25px;
+ }
+
+ .new_book a{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(to right,rgb(161, 243, 161), rgb(211, 244, 211));
+    color: #640be9;
+    text-decoration: none;
+    font-weight: 550;
+    border-radius: 6px;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-bottom: 2px solid #adf5b0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+    cursor: pointer;
+ }
+
+table {
+    border: 1px solid black
+}
+
+.table_index {
+  border-collapse: collapse;
+}
+
+.table_index th, 
+.table_index td {
+  border: none;
+  padding: 8px 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.search-result-item {
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.search-result-title {
+    text-decoration: none;
+    color: #640be9;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.search-result-author {
+    margin-left: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.status-available {
+    color: green;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-unavailable {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.btn-action {
+  margin-top: 0 !important;
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 550;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+
+.btn-edit {
+  background: linear-gradient(to right, rgb(161, 243, 161), rgb(211, 244, 211));
+  color: #640be9;
+  border-bottom: 2px solid #adf5b0;
+}
+
+.btn-back {
+  background: rgba(255, 255, 255, 0.9);
+  color: #640be9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+
+.btn-delete {
+  background: linear-gradient(to right, rgb(243, 161, 161), rgb(244, 211, 211));
+  color: #900;
+  border-bottom: 2px solid #f5adad;
+}
+
+
+.btn-action:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}

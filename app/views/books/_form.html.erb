@@ -1,0 +1,43 @@
+<%= form_with model: book do |form| %>
+  <% if book.errors.any? %>
+    <h3>Houve <%= book.errors.count %> erros!</h3>
+    <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "Título do livro" %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <%= form.label :author, "Autor do livro" %><br>
+    <%= form.text_field :author %>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <%= form.label :book_code, "Código do livro" %><br>
+    <%= form.text_field :book_code %>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <%= form.label :status, "Status do livro" %><br>
+    <%= form.radio_button :status, true, checked: true%>
+    <%= form.label :status_available, "Disponível" %>
+
+    <%= form.radio_button :status, false %>
+    <%= form.label :status_unavailable, "Indisponível" %>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <%= form.submit "Salvar alterações" %>
+  </div>
+<% end %>
+
+
+
+
+

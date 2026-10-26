@@ -1,0 +1,19 @@
+<i><h1><%= @book.title %></h1></i>
+
+<div style="background: rgba(255, 255, 255, 0.85); padding: 20px; border-radius: 8px; width: 400px; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <p><strong>Autor:</strong> <%= @book.author %></p>
+  <p><strong>Código do Livro:</strong> <%= @book.book_code %></p>
+  <p><strong>Status:</strong> 
+    <% if @book.status %>
+      <span style="color: green; font-weight: bold;">Disponível</span>
+    <% else %>
+      <span style="color: red; font-weight: bold;">Indisponível</span>
+    <% end %>
+  </p>
+</div>
+
+<div style="margin-top: 25px; display: flex; gap: 15px; align-items: center;">
+  <%= link_to "Editar", edit_book_path(@book), class: "btn-action btn-edit" %>
+  <%= link_to "Voltar para a lista", books_path, class: "btn-action btn-back" %>
+  <%= link_to "Excluir Livro", book_path(@book), class: "btn-action btn-delete", data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja excluir?" } %>
+</div>

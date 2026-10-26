@@ -1,0 +1,67 @@
+<div class="search-container" style="margin-bottom: 25px; display: flex; gap: 10px; align-items: center;">
+  <%= form_with url: books_path, method: :get, local: true do |f| %>
+    <%= f.text_field :query, placeholder: "Digite o nome do livro...", value: params[:query], style: "padding: 10px; width: 300px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;" %>
+    <%= f.submit "Pesquisar", style: "padding: 10px 18px; background: linear-gradient(to right, rgb(161, 243, 161), rgb(211, 244, 211)); color: #640be9; border: 1px solid #adf5b0; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px;" %>
+  <% end %>
+
+  <!-- Botão Dinâmico -->
+  <% if params[:show_all].present? %>
+    <%= link_to "Ocultar tabela", books_path, style: "padding: 10px 18px; background-color: #f0f0f0; color: #333; text-decoration: none; border-radius: 6px; border: 1px solid #ccc; font-weight: bold; font-size: 14px;" %>
+  <% else %>
+    <%= link_to "Mostrar todos", books_path(show_all: 'true'), style: "padding: 10px 18px; background-color: #f0f0f0; color: #333; text-decoration: none; border-radius: 6px; border: 1px solid #ccc; font-weight: bold; font-size: 14px;" %>
+  <% end %>
+</div>
+
+<% if params[:query].present? %>
+  <h3>Resultados da busca:</h3>
+  <ul style="list-style: none; padding: 0;">
+    <% @books.each do |book| %>
+      <li class="search-result-item">
+        <div>
+          <%= link_to book.title, book_path(book), class: "search-result-title" %>
+          <span class="search-result-author">(Autor: <%= book.author %>)</span>
+        </div>
+        <div>
+          <% if book.status %>
+            <span class="status-available">Disponível</span>
+          <% else %>
+            <span class="status-unavailable">Indisponível</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% elsif params[:show_all].present? %>
+  <table class="table_index" style="background: rgba(255, 255, 255, 0.9); border-radius: 6px;">
+    <thead>
+      <tr>
+        <th style="padding: 8px 16px; text-align: left;">Título</th>
+        <th style="padding: 8px 16px; text-align: left;">Autor</th>
+        <th style="padding: 8px 16px; text-align: left;">Código</th>
+        <th style="padding: 8px 16px; text-align: left;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td style="padding: 8px 16px;"><%= link_to book.title, book_path(book) %></td>
+          <td style="padding: 8px 16px;"><%= book.author %></td>
+          <td style="padding: 8px 16px;"><%= book.book_code %></td>
+          <td style="padding: 8px 16px;">
+            <% if book.status %>
+              <div style="color: green;">Disponível</div>
+            <% else %>
+              <div style="color: red;">Indisponível</div>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p style="color: #555; font-style: italic;">Digite o nome de um livro acima para pesquisar ou clique em "Mostrar todos".</p>
+<% end %>
+
+<div class="new_book" style="margin-top: 20px;">
+  <%= link_to "Cadastrar livro", new_book_path %>
+</div>

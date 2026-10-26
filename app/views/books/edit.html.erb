@@ -1,0 +1,8 @@
+<i><h1> Editar Livro </h1></i>
+
+<%= render 'form', book: @book %>
+
+<div style="margin-top: 15px; display: flex; gap: 15px; align-items: center;">
+  <%= link_to "Ver detalhes", @book, style: "color: #640be9; text-decoration: none; font-weight: bold;" %> |
+  <%= link_to "Voltar", books_path, style: "color: #640be9; text-decoration: none; font-weight: bold;" %>
+</div>
