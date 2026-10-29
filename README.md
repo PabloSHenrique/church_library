@@ -1,24 +1,33 @@
-# README
+Church Library (Sistema de Gerenciamento de Livraria)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicação web desenvolvida em Ruby on Rails para gerenciar o acervo, o controle de estoque e o histórico de empréstimos de livros de uma biblioteca comunitária/igreja. O sistema visa facilitar a organização dos exemplares disponíveis e o acompanhamento dos empréstimos realizados aos membros.
 
-Things you may want to cover:
 
-* Ruby version
+Funcionalidades
+- Cadastro, edição e listagem de livros.
+- Controle de disponibilidade e status dos exemplares (emprestado ou disponível).
+- Interface limpa e responsiva.
 
-* System dependencies
 
-* Configuration
+Tecnologias Utilizadas
+- **Ruby:** (consulte o arquivo `.ruby-version` para a versão exata)
+- **Ruby on Rails**
+- **Banco de Dados:** PostgreSQL
+- **Estilização:** Bootstrap / CSS
 
-* Database creation
 
-* Database initialization
+Como Rodar o Projeto Localmente
 
-* How to run the test suite
+Para executar a aplicação na sua máquina, abra o terminal e execute os comandos abaixo em sequência:
 
-* Services (job queues, cache servers, search engines, etc.)
+git clone [https://github.com/PabloSHenrique/church_library.git](https://github.com/PabloSHenrique/church_library.git)
+cd church_library
+bundle install
+rails db:create
+rails db:migrate
+Depois disso, basta acessar no seu navegador: http://localhost:3000
 
-* Deployment instructions
+👩‍💻 Autor
+Desenvolvido por Pablo Henrique.
+rails server
 
-* ...
