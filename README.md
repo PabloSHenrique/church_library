@@ -20,12 +20,12 @@ Aplicação web desenvolvida em Ruby on Rails para gerenciar o acervo, o control
 
 Para executar a aplicação na sua máquina, abra o terminal e execute os comandos abaixo em sequência:
 
-git clone [https://github.com/PabloSHenrique/church_library.git](https://github.com/PabloSHenrique/church_library.git)
-cd church_library
-bundle install
-rails db:create
-rails db:migrate
-Depois disso, basta acessar no seu navegador: http://localhost:3000
+- git clone [https://github.com/PabloSHenrique/church_library.git](https://github.com/PabloSHenrique/church_library.git)
+- cd church_library
+- bundle install
+- rails db:create
+- rails db:migrate
+- Depois disso, basta acessar no seu navegador: http://localhost:3000
 
 ##👩‍💻 Autor
 Desenvolvido por Pablo Henrique.
